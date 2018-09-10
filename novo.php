@@ -1,4 +1,12 @@
 <?php
+   session_start();
+
+    $logado = $_SESSION['logado'];
+    if ($logado == null)
+    {
+      echo "Você não tem permissão de acesso a essa página! Favor se logar.";
+      exit();
+    }
 
     require_once("model/lista_produtos.php");
 

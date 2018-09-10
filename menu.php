@@ -1,3 +1,15 @@
+<?php
+
+
+   if (isset($_SESSION['logado']))
+   {
+   $logado = $_SESSION['logado'];
+   } else {
+   $logado = null;
+   }
+    
+
+?>
 
 <!doctype html>
 <html lang="pt-br">
@@ -30,6 +42,12 @@
       <li class="nav-item active">
         <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
       </li>
+      
+<?php
+      
+      if($logado != null)  
+      {
+?>        
       <li class="nav-item">
         <a class="nav-link" href="novo.php">Novo</a>
       </li>
@@ -43,10 +61,30 @@
       <li class="nav-item">
         <a class="nav-link" href="lista_produtos.php">Listar Produto</a>
       </li>
+  <?php    
      
+      }
+   ?>
     </ul>
-   
-   <a href="login.php" class="btn btn-outline-primary">Login</a>
+  <?php
+    if ($logado ==null)
+    {
+   ?>
+     <a href="login.php" class="btn btn-outline-primary">Login</a> 
+   <?php 
+    } else
+    {
+    ?>
+    
+    <a href="logout.php" class="btn btn-outline-primary">Longout</a>
+   <?php
+      echo $logado['usuario'] ." (logout)";
+    ?>  
+    
+    <?php
+    }
+   ?>
+
 
   </div>
 </nav>

@@ -1,4 +1,6 @@
 <?php
+  
+    session_start();
 
     require_once("model/lista_produtos.php");
     require_once("model/lista_reclamacoes.php");

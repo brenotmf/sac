@@ -1,5 +1,6 @@
 <?php
 
+
 require_once("conect.php");
 
 function logar($usuario, $senha)
