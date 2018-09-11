@@ -36,7 +36,7 @@
                             </div>
                             <div class="checkbox">
                                 <label>
-                                    <input name="lembrar" type="checkbox" value="Remember Me">Me manter logado
+                                    <input name="lembrar" type="checkbox" value="sim">Me manter logado
                                 </label>
                             </div>
                            <button type="submit" class="btn btn-success">Logar</button>

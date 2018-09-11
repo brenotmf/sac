@@ -47,10 +47,17 @@
       
       if($logado != null)  
       {
+        if ($logado ['tipo'] != 'admin')
+        {
 ?>        
       <li class="nav-item">
         <a class="nav-link" href="novo.php">Novo</a>
       </li>
+      
+      <?php
+        }else
+       {
+             ?>
       <li class="nav-item">
         <a class="nav-link" href="reclamacoes.php">Lista de reclamações</a>
       </li>
@@ -62,7 +69,7 @@
         <a class="nav-link" href="lista_produtos.php">Listar Produto</a>
       </li>
   <?php    
-     
+       }     
       }
    ?>
     </ul>
@@ -76,11 +83,11 @@
     {
     ?>
     
-    <a href="logout.php" class="btn btn-outline-primary">Longout</a>
+    <a href="logout.php" class="btn btn-outline-primary">  
    <?php
       echo $logado['usuario'] ." (logout)";
     ?>  
-    
+    </a>
     <?php
     }
    ?>

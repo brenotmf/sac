@@ -1,5 +1,6 @@
 <?php
 
+
   require_once("conect.php");
   require_once("libs.php");
 
@@ -57,7 +58,7 @@ function respondeReclamacao($id, $status, $resposta)
   
 }
 
-function novaReclamacao($titulo, $descricao, $produto)
+function novaReclamacao($titulo, $descricao, $produto, $usuario)
 {
   $con = dbcon();
   
@@ -75,7 +76,7 @@ function novaReclamacao($titulo, $descricao, $produto)
         '$titulo',
         '$descricao',
         NOW( ) ,  
-        '',  
+        '$usuario',  
         '$produto', 
         'NOVO'
         )";
